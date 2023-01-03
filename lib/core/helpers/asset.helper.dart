@@ -11,4 +11,7 @@ class AssetHelper {
   static const String icoHotel = 'assets/icons/ico_hotel.png';
   static const String icoPlane = 'assets/icons/ico_plane.png';
   static const String icoHotelPlane = 'assets/icons/ico_hotel_plane.png';
+  static const String icoLocation = 'assets/icons/ico_location.png';
+  static const String icoCalendar = 'assets/icons/ico_calendar.png';
+  static const String icoBed = 'assets/icons/ico_bed.png';
 }
