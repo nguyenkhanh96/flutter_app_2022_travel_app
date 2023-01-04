@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/color_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
@@ -40,18 +38,23 @@ class AppBarContainerWidget extends StatelessWidget {
                   Row(
                     children: [
                       if (implementLeading)
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(kDefaultPadding),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(kDefaultPadding),
+                              ),
+                              color: Colors.white,
                             ),
-                            color: Colors.white,
-                          ),
-                          padding: EdgeInsets.all(kItemPadding),
-                          child: Icon(
-                            FontAwesomeIcons.arrowLeft,
-                            color: Colors.black,
-                            size: kDefaultIconSize,
+                            padding: EdgeInsets.all(kItemPadding),
+                            child: Icon(
+                              FontAwesomeIcons.arrowLeft,
+                              color: Colors.black,
+                              size: kDefaultIconSize,
+                            ),
                           ),
                         ),
                       Expanded(
