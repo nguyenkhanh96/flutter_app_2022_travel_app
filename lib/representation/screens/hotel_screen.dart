@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/guest_and_room_booking_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/select_date_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
@@ -66,7 +67,10 @@ class _HotelScreenState extends State<HotelScreen> {
               icon: AssetHelper.icoBed,
               title: "Guest and Room",
               description: "2 Guest, 1 Room",
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .pushNamed(GuestAndRoomBookingScreen.routeName);
+              },
             ),
             SizedBox(
               height: kMediumPadding * 2,

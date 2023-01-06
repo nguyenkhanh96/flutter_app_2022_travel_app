@@ -14,4 +14,8 @@ class AssetHelper {
   static const String icoLocation = 'assets/icons/ico_location.png';
   static const String icoCalendar = 'assets/icons/ico_calendar.png';
   static const String icoBed = 'assets/icons/ico_bed.png';
+  static const String icoPersion = 'assets/icons/ico_persion.png';
+  static const String icoBedPink = 'assets/icons/ico_bed_pink.png';
+  static const String icoDecrease = 'assets/icons/ico_decrease.png';
+  static const String icoIncrease = 'assets/icons/ico_increase.png';
 }
