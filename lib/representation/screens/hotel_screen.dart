@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/guest_and_room_booking_screen.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/hotels_result_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/select_date_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
@@ -77,7 +78,9 @@ class _HotelScreenState extends State<HotelScreen> {
             ),
             ButtonWidget(
               title: "Search",
-              ontap: (() {}),
+              ontap: (() {
+                Navigator.of(context).pushNamed(HotelsResultScreen.routeName);
+              }),
             )
           ],
         ),
