@@ -4,6 +4,7 @@ import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.d
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/hotel_detail_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widget.dart';
 
@@ -114,7 +115,10 @@ class ItemHotelWidget extends StatelessWidget {
                     Expanded(
                       child: ButtonWidget(
                         title: "Book a room",
-                        ontap: () {},
+                        ontap: () {
+                          Navigator.of(context)
+                              .pushNamed(HotelDetailScreen.routeName);
+                        },
                       ),
                     ),
                   ],
