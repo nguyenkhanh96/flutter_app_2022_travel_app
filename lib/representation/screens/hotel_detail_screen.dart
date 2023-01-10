@@ -1,13 +1,21 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2022_travel_app/core/constants/color_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
+import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
+import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HotelDetailScreen extends StatefulWidget {
-  const HotelDetailScreen({super.key});
+  const HotelDetailScreen({super.key, required this.hotelModel});
 
   static const String routeName = '/hotel_detail_screen';
+
+  final HotelModel hotelModel;
 
   @override
   State<HotelDetailScreen> createState() => _HotelDetailScreenState();
@@ -110,6 +118,111 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                     Expanded(
                       child: ListView(
                         controller: scrollController,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                widget.hotelModel.hotelName,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Spacer(),
+                              Text(
+                                "\$${widget.hotelModel.price}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text("/night"),
+                            ],
+                          ),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          Row(
+                            children: [
+                              ImageHelper.loadFromAsset(
+                                AssetHelper.icoLocationHotel,
+                              ),
+                              SizedBox(
+                                width: kMinPadding,
+                              ),
+                              Text(widget.hotelModel.location),
+                            ],
+                          ),
+                          DashLineWidget(),
+                          // SizedBox(
+                          //   height: kDefaultPadding,
+                          // ),
+                          Row(
+                            children: [
+                              ImageHelper.loadFromAsset(
+                                AssetHelper.icoStarHotel,
+                              ),
+                              SizedBox(
+                                width: kMinPadding,
+                              ),
+                              Text('${widget.hotelModel.star}/5'),
+                              Text(
+                                ' (${widget.hotelModel.numberOfReview} reviews)',
+                                style: TextStyle(
+                                  color: ColorPalette.subTitleColor,
+                                ),
+                              ),
+                              Spacer(),
+                              Text(
+                                "See All",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorPalette.primaryColor,
+                                ),
+                              )
+                            ],
+                          ),
+                          DashLineWidget(),
+                          // SizedBox(
+                          //   height: kDefaultPadding,
+                          // ),
+                          Text(
+                            "Infomation",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          Text(
+                              "You will find every comfort because many of the services that the hotel offers for travellers and of course the hotel is very comfortable."),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          Text(
+                            "Location",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          Text(
+                              "Located in the famous neighborhood of Seoul, Grand Luxury’s is set in a building built in the 2010s."),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          ImageHelper.loadFromAsset(
+                            AssetHelper.mapHotel,
+                          ),
+                          SizedBox(
+                            height: kDefaultPadding * 2,
+                          ),
+                          ButtonWidget(
+                            title: "Select Room",
+                            ontap: () {},
+                          ),
+                        ],
                       ),
                     ),
                   ],

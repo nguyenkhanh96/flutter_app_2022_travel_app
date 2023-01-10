@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: ColorPalette.backgroundScaffoldColor,
       ),
       routes: routes,
+      onGenerateRoute: generateRoutes,
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );
