@@ -8,6 +8,7 @@ import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widget.dart';
+import 'package:flutter_app_2022_travel_app/representation/widgets/item_utility_hotel.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HotelDetailScreen extends StatefulWidget {
@@ -195,6 +196,10 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                           ),
                           Text(
                               "You will find every comfort because many of the services that the hotel offers for travellers and of course the hotel is very comfortable."),
+                          SizedBox(
+                            height: kDefaultPadding,
+                          ),
+                          ItemUtilityHotelWidget(),
                           SizedBox(
                             height: kDefaultPadding,
                           ),

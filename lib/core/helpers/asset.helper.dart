@@ -25,4 +25,12 @@ class AssetHelper {
   static const String hotel3 = 'assets/images/hotel3.png';
   static const String hotelDetail = 'assets/images/hotel_detail.png';
   static const String mapHotel = 'assets/images/map_hotel.png';
+  static const String curencyExchangeExtension =
+      'assets/images/curency_exchange_extension.png';
+  static const String fontDeskExtension =
+      'assets/images/font_desk_extension.png';
+  static const String moreExtension = 'assets/images/more_extension.png';
+  static const String restauranExtension =
+      'assets/images/restauran_extension.png';
+  static const String wifiExtension = 'assets/images/wifi_extension.png';
 }
