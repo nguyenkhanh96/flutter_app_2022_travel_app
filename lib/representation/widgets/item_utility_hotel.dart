@@ -9,14 +9,26 @@ class ItemUtilityHotelWidget extends StatelessWidget {
   const ItemUtilityHotelWidget({super.key});
 
   static const List<Map<String, String>> listUtilityHotel = [
-    {'icon': AssetHelper.restauranExtension, 'name': 'Restauran'},
-    {'icon': AssetHelper.wifiExtension, 'name': 'Wifi'},
+    {
+      'icon': AssetHelper.restauranExtension,
+      'name': 'Restauran',
+    },
+    {
+      'icon': AssetHelper.wifiExtension,
+      'name': 'Wifi',
+    },
     {
       'icon': AssetHelper.curencyExchangeExtension,
-      'name': 'Currency \nExchange'
+      'name': 'Currency \nExchange',
     },
-    {'icon': AssetHelper.fontDeskExtension, 'name': '24-hour \nFront Desk'},
-    {'icon': AssetHelper.moreExtension, 'name': 'More'},
+    {
+      'icon': AssetHelper.fontDeskExtension,
+      'name': '24-hour \nFront Desk',
+    },
+    {
+      'icon': AssetHelper.moreExtension,
+      'name': 'More',
+    },
   ];
 
   Widget _buildItemUtilityHotelWidget({

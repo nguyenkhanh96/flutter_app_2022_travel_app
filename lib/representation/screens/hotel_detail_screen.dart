@@ -6,6 +6,7 @@ import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.d
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/select_room_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/item_utility_hotel.dart';
@@ -221,11 +222,14 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                             AssetHelper.mapHotel,
                           ),
                           SizedBox(
-                            height: kDefaultPadding * 2,
+                            height: kDefaultPadding,
                           ),
                           ButtonWidget(
                             title: "Select Room",
-                            ontap: () {},
+                            ontap: () {
+                              Navigator.of(context)
+                                  .pushNamed(SelectRoomScreen.routeName);
+                            },
                           ),
                         ],
                       ),
