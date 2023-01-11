@@ -33,4 +33,7 @@ class AssetHelper {
   static const String restauranExtension =
       'assets/images/restauran_extension.png';
   static const String wifiExtension = 'assets/images/wifi_extension.png';
+  static const String room1 = 'assets/images/room_1.png';
+  static const String room2 = 'assets/images/room_2.png';
+  static const String room3 = 'assets/images/room_3.png';
 }
