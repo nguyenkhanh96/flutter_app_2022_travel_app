@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/color_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/room_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/item_utility_hotel.dart';
@@ -93,7 +96,10 @@ class ItemRoomBookingWidget extends StatelessWidget {
               ),
               Expanded(
                 child: ButtonWidget(
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.of(context).pushNamed(CheckOutScreen.routeName,
+                        arguments: roomModel);
+                  },
                   title: "Choose",
                 ),
               ),

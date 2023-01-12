@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
+import 'package:flutter_app_2022_travel_app/data/models/room_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/guest_and_room_booking_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/hotel_detail_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/hotel_screen.dart';
@@ -29,6 +31,15 @@ MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {
           final HotelModel hotelModel = (settings.arguments as HotelModel);
           return HotelDetailScreen(
             hotelModel: hotelModel,
+          );
+        },
+      );
+    case CheckOutScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) {
+          final RoomModel roomModel = (settings.arguments as RoomModel);
+          return CheckOutScreen(
+            roomModel: roomModel,
           );
         },
       );
