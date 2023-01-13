@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';

@@ -151,61 +151,67 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
     return AppBarContainerWidget(
       implementLeading: true,
       titleString: "Checkout",
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: listStep
-                  .map(
-                    (e) => _buildItemStepCheckout(
-                        listStep.indexOf(e) + 1,
-                        e,
-                        listStep.indexOf(e) == listStep.length - 1,
-                        listStep.indexOf(e) == 0),
-                  )
-                  .toList(),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: listStep
+                .map(
+                  (e) => _buildItemStepCheckout(
+                      listStep.indexOf(e) + 1,
+                      e,
+                      listStep.indexOf(e) == listStep.length - 1,
+                      listStep.indexOf(e) == 0),
+                )
+                .toList(),
+          ),
+          SizedBox(
+            height: kDefaultPadding,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ItemRoomBookingWidget(
+                    roomModel: widget.roomModel,
+                    numberOfRoom: 1,
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding,
+                  ),
+                  _buildItemOptionCheckout(
+                    "Contact Details",
+                    AssetHelper.icoContact,
+                    "Add Contact",
+                    context,
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding,
+                  ),
+                  _buildItemOptionCheckout(
+                    "Promo Code",
+                    AssetHelper.icoPromo,
+                    "Add Promo Code",
+                    context,
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding,
+                  ),
+                  ButtonWidget(
+                    title: "payment",
+                    ontap: () {
+                      Navigator.of(context).popUntil(
+                          (route) => route.settings.name == MainApp.routeName);
+                    },
+                  ),
+                  SizedBox(
+                    height: kMediumPadding,
+                  ),
+                ],
+              ),
             ),
-            SizedBox(
-              height: kDefaultPadding,
-            ),
-            ItemRoomBookingWidget(
-              roomModel: widget.roomModel,
-              numberOfRoom: 1,
-            ),
-            SizedBox(
-              height: kDefaultPadding,
-            ),
-            _buildItemOptionCheckout(
-              "Contact Details",
-              AssetHelper.icoContact,
-              "Add Contact",
-              context,
-            ),
-            SizedBox(
-              height: kDefaultPadding,
-            ),
-            _buildItemOptionCheckout(
-              "Promo Code",
-              AssetHelper.icoPromo,
-              "Add Promo Code",
-              context,
-            ),
-            SizedBox(
-              height: kDefaultPadding,
-            ),
-            ButtonWidget(
-              title: "payment",
-              ontap: () {
-                Navigator.of(context).popUntil(
-                    (route) => route.settings.name == MainApp.routeName);
-              },
-            ),
-            SizedBox(
-              height: kDefaultPadding,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
