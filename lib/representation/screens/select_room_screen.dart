@@ -43,8 +43,12 @@ class SelectRoomScreen extends StatelessWidget {
       implementLeading: true,
       child: SingleChildScrollView(
         child: Column(
-          children:
-              listRoom.map((e) => ItemRoomBookingWidget(roomModel: e)).toList(),
+          children: listRoom
+              .map((e) => ItemRoomBookingWidget(
+                    roomModel: e,
+                    numberOfRoom: null,
+                  ))
+              .toList(),
         ),
       ),
     );

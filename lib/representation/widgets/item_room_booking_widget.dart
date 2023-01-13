@@ -11,9 +11,12 @@ import 'package:flutter_app_2022_travel_app/representation/widgets/dashline_widg
 import 'package:flutter_app_2022_travel_app/representation/widgets/item_utility_hotel.dart';
 
 class ItemRoomBookingWidget extends StatelessWidget {
-  const ItemRoomBookingWidget({super.key, required this.roomModel});
+  const ItemRoomBookingWidget(
+      {super.key, required this.roomModel, required this.numberOfRoom});
 
   final RoomModel roomModel;
+
+  final int? numberOfRoom;
 
   @override
   Widget build(BuildContext context) {
@@ -94,15 +97,20 @@ class ItemRoomBookingWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              Expanded(
-                child: ButtonWidget(
-                  ontap: () {
-                    Navigator.of(context).pushNamed(CheckOutScreen.routeName,
-                        arguments: roomModel);
-                  },
-                  title: "Choose",
-                ),
-              ),
+              numberOfRoom == null
+                  ? Expanded(
+                      child: ButtonWidget(
+                        ontap: () {
+                          Navigator.of(context).pushNamed(
+                              CheckOutScreen.routeName,
+                              arguments: roomModel);
+                        },
+                        title: "Choose",
+                      ),
+                    )
+                  : Text(
+                      "$numberOfRoom room",
+                    ),
             ],
           )
         ],
