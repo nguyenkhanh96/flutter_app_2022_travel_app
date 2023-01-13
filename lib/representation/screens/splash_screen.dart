@@ -17,6 +17,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     redirectIntroScreen();
@@ -27,9 +28,11 @@ class _SplashScreenState extends State<SplashScreen> {
         LocalStorageHelper.getValue("ignoreIntroScreen") as bool?;
     await Future.delayed(const Duration(seconds: 2));
     if (ignoreIntroScreen != null && ignoreIntroScreen) {
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushNamed(MainApp.routeName);
     } else {
       LocalStorageHelper.setValue("ignoreIntroScreen", true);
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushNamed(IntroScreen.routeName);
     }
   }

@@ -5,6 +5,7 @@ import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_conta
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
+// ignore: must_be_immutable, use_key_in_widget_constructors
 class SelectDateScreen extends StatelessWidget {
   static const String routeName = '/select_date_screen';
 

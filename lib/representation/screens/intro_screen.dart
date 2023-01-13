@@ -27,6 +27,7 @@ class _IntroScreenState extends State<IntroScreen> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     _pageController.addListener(() {
