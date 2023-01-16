@@ -38,4 +38,8 @@ class AssetHelper {
   static const String room3 = 'assets/images/room_3.png';
   static const String icoContact = 'assets/icons/ico_contact.png';
   static const String icoPromo = 'assets/icons/ico_promo.png';
+  static const String dubai = 'assets/images/dubai.png';
+  static const String japan = 'assets/images/japan.png';
+  static const String korea = 'assets/images/korea.png';
+  static const String turkey = 'assets/images/turkey.png';
 }

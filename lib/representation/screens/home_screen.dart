@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2022_travel_app/core/constants/color_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/hotel_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
+import 'package:flutter_app_2022_travel_app/representation/widgets/build_image_home_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +16,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Map<String, String>> listImageLeft = [
+    {
+      'name': 'Korea',
+      'image': AssetHelper.korea,
+    },
+    {
+      'name': 'Dubai',
+      'image': AssetHelper.dubai,
+    },
+  ];
+
+  final List<Map<String, String>> listImageRight = [
+    {
+      'name': 'Turkey',
+      'image': AssetHelper.turkey,
+    },
+    {
+      'name': 'Japan',
+      'image': AssetHelper.japan,
+    },
+  ];
+
   Widget _builtItemCategory(
       Widget icon, Color color, Function() onTap, String title) {
     return GestureDetector(
@@ -71,10 +95,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Spacer(),
-            Icon(
-              FontAwesomeIcons.bell,
-              size: kDefaultIconSize,
-              color: Colors.white,
+            Stack(
+              children: const [
+                Icon(
+                  FontAwesomeIcons.bell,
+                  size: kDefaultIconSize,
+                  color: Colors.white,
+                ),
+                Positioned(
+                  right: 0,
+                  child: Icon(
+                    FontAwesomeIcons.solidCircle,
+                    size: 10,
+                    color: Colors.red,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               width: kTopPadding,
@@ -172,6 +208,58 @@ class _HomeScreenState extends State<HomeScreen> {
                     "All"),
               ),
             ],
+          ),
+          SizedBox(
+            height: kBottomBarIconSize,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text(
+                "Popular Destinations",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 21,
+                ),
+              ),
+              Text(
+                "See All",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: ColorPalette.primaryColor,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: kMediumPadding,
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: listImageLeft
+                          .map((e) => BuildImageHomeScreen(
+                              name: e["name"]!, image: e["image"]!))
+                          .toList(),
+                    ),
+                  ),
+                  SizedBox(
+                    width: kDefaultPadding,
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: listImageRight
+                          .map((e) => BuildImageHomeScreen(
+                              name: e["name"]!, image: e["image"]!))
+                          .toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
