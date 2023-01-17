@@ -20,10 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'name': 'Korea',
       'image': AssetHelper.korea,
+      "point": "4.0",
     },
     {
       'name': 'Dubai',
       'image': AssetHelper.dubai,
+      "point": "4.2",
     },
   ];
 
@@ -31,10 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'name': 'Turkey',
       'image': AssetHelper.turkey,
+      "point": "4.5",
     },
     {
       'name': 'Japan',
       'image': AssetHelper.japan,
+      "point": "4.7",
     },
   ];
 
@@ -242,7 +246,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       children: listImageLeft
                           .map((e) => BuildImageHomeScreen(
-                              name: e["name"]!, image: e["image"]!))
+                                name: e["name"]!,
+                                image: e["image"]!,
+                                point: e["point"]!,
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(
+                                      HotelScreen.routeName,
+                                      arguments: e["name"]!);
+                                },
+                              ))
                           .toList(),
                     ),
                   ),
@@ -253,7 +265,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       children: listImageRight
                           .map((e) => BuildImageHomeScreen(
-                              name: e["name"]!, image: e["image"]!))
+                                name: e["name"]!,
+                                image: e["image"]!,
+                                point: e["point"]!,
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(
+                                      HotelScreen.routeName,
+                                      arguments: e["name"]!);
+                                },
+                              ))
                           .toList(),
                     ),
                   ),

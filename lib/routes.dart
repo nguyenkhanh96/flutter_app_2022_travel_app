@@ -16,7 +16,6 @@ final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => const MainApp(),
-  HotelScreen.routeName: (context) => const HotelScreen(),
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
   GuestAndRoomBookingScreen.routeName: (context) => GuestAndRoomBookingScreen(),
   HotelsResultScreen.routeName: (context) => HotelsResultScreen(),
@@ -43,6 +42,15 @@ MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {
           );
         },
       );
+    case HotelScreen.routeName:
+      final String? destination = (settings.arguments as String?);
+      return MaterialPageRoute<dynamic>(
+        settings: settings,
+        builder: (context) => HotelScreen(
+          destination: destination,
+        ),
+      );
+    default:
+      return null;
   }
-  return null;
 }

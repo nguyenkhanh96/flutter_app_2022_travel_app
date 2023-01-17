@@ -17,6 +17,11 @@ class GuestAndRoomBookingScreen extends StatefulWidget {
 }
 
 class _GuestAndRoomBookingScreenState extends State<GuestAndRoomBookingScreen> {
+  final GlobalKey<ItemAddGuestAndRoomStateState> _itemCountGuest =
+      GlobalKey<ItemAddGuestAndRoomStateState>();
+  final GlobalKey<ItemAddGuestAndRoomStateState> _itemCountRoom =
+      GlobalKey<ItemAddGuestAndRoomStateState>();
+
   @override
   Widget build(BuildContext context) {
     return AppBarContainerWidget(
@@ -28,11 +33,13 @@ class _GuestAndRoomBookingScreenState extends State<GuestAndRoomBookingScreen> {
             height: kMediumPadding * 1.5,
           ),
           ItemAddGuestAndRoomState(
+            key: _itemCountGuest,
             icon: AssetHelper.icoPersion,
             innitData: 2,
             title: "Guest",
           ),
           ItemAddGuestAndRoomState(
+            key: _itemCountRoom,
             icon: AssetHelper.icoBedPink,
             innitData: 1,
             title: "Room",
@@ -43,7 +50,10 @@ class _GuestAndRoomBookingScreenState extends State<GuestAndRoomBookingScreen> {
           ButtonWidget(
             title: 'Select',
             ontap: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).pop([
+                _itemCountGuest.currentState!.number,
+                _itemCountRoom.currentState!.number,
+              ]);
             },
           ),
           SizedBox(

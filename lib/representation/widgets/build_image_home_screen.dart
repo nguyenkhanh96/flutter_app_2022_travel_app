@@ -2,12 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/textstyle_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/hotel_screen.dart';
 
 class BuildImageHomeScreen extends StatefulWidget {
+  const BuildImageHomeScreen({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.point,
+    required this.onTap,
+  });
+
   final String name;
   final String image;
-  const BuildImageHomeScreen(
-      {super.key, required this.name, required this.image});
+  final String point;
+  final VoidCallback onTap;
 
   @override
   State<BuildImageHomeScreen> createState() => _BuildImageHomeScreenState();
@@ -19,6 +28,7 @@ class _BuildImageHomeScreenState extends State<BuildImageHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: widget.onTap,
       child: Container(
         margin: EdgeInsets.only(bottom: kDefaultPadding),
         child: Stack(
@@ -65,7 +75,7 @@ class _BuildImageHomeScreenState extends State<BuildImageHomeScreen> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.star,
                           color: Color(0xffFFC107),
@@ -73,7 +83,9 @@ class _BuildImageHomeScreenState extends State<BuildImageHomeScreen> {
                         SizedBox(
                           width: kItemPadding,
                         ),
-                        Text("4.5"),
+                        Text(
+                          widget.point,
+                        ),
                       ],
                     ),
                   ),

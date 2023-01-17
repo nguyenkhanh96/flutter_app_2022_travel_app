@@ -16,10 +16,10 @@ class ItemAddGuestAndRoomState extends StatefulWidget {
 
   @override
   State<ItemAddGuestAndRoomState> createState() =>
-      _ItemAddGuestAndRoomStateState();
+      ItemAddGuestAndRoomStateState();
 }
 
-class _ItemAddGuestAndRoomStateState extends State<ItemAddGuestAndRoomState> {
+class ItemAddGuestAndRoomStateState extends State<ItemAddGuestAndRoomState> {
   late final TextEditingController _textEditingController;
   final FocusNode _focusNode = FocusNode();
 

@@ -10,7 +10,9 @@ import 'package:flutter_app_2022_travel_app/representation/widgets/item_booking_
 import 'package:flutter_app_2022_travel_app/core/extensions/date_ext.dart';
 
 class HotelScreen extends StatefulWidget {
-  const HotelScreen({super.key});
+  const HotelScreen({super.key, this.destination});
+
+  final String? destination;
 
   static const String routeName = '/hotel_screen';
 
@@ -20,6 +22,7 @@ class HotelScreen extends StatefulWidget {
 
 class _HotelScreenState extends State<HotelScreen> {
   String? dateSelected;
+  String? guestAndRoom;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class _HotelScreenState extends State<HotelScreen> {
             ItemBookingWidget(
               icon: AssetHelper.icoLocation,
               title: "Destination",
-              description: "South Korea",
+              description: widget.destination ?? 'Viet Nam',
               onTap: () {},
             ),
             SizedBox(
@@ -67,10 +70,15 @@ class _HotelScreenState extends State<HotelScreen> {
             ItemBookingWidget(
               icon: AssetHelper.icoBed,
               title: "Guest and Room",
-              description: "2 Guest, 1 Room",
-              onTap: () {
-                Navigator.of(context)
+              description: guestAndRoom ?? 'Guest And Room',
+              onTap: () async {
+                final result = await Navigator.of(context)
                     .pushNamed(GuestAndRoomBookingScreen.routeName);
+                if (result is List<int>) {
+                  setState(() {
+                    guestAndRoom = '${result[0]} Guest, ${result[1]} Room';
+                  });
+                }
               },
             ),
             SizedBox(
