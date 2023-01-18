@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/data/models/hotel_model.dart';
 import 'package:flutter_app_2022_travel_app/data/models/room_model.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen_payment.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/guest_and_room_booking_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/hotel_detail_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/hotel_screen.dart';
@@ -20,6 +21,7 @@ final Map<String, WidgetBuilder> routes = {
   GuestAndRoomBookingScreen.routeName: (context) => GuestAndRoomBookingScreen(),
   HotelsResultScreen.routeName: (context) => HotelsResultScreen(),
   SelectRoomScreen.routeName: (context) => SelectRoomScreen(),
+  PaymentScreen.routeName: (context) => PaymentScreen(),
 };
 
 MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {

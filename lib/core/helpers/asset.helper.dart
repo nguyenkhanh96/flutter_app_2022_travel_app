@@ -42,4 +42,7 @@ class AssetHelper {
   static const String japan = 'assets/images/japan.png';
   static const String korea = 'assets/images/korea.png';
   static const String turkey = 'assets/images/turkey.png';
+  static const String miniMarket = 'assets/images/mini_market.png';
+  static const String credit = 'assets/images/credit.png';
+  static const String bank = 'assets/images/bank.png';
 }

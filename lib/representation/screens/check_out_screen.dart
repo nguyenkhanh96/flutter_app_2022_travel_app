@@ -4,6 +4,7 @@ import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.d
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/room_model.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen_payment.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/main_app.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
@@ -124,6 +125,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 12,
+            fontWeight: isCheck ? FontWeight.bold : FontWeight.normal,
           ),
         ),
         SizedBox(
@@ -200,8 +202,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   ButtonWidget(
                     title: "payment",
                     ontap: () {
-                      Navigator.of(context).popUntil(
-                          (route) => route.settings.name == MainApp.routeName);
+                      Navigator.of(context).pushNamed(PaymentScreen.routeName);
                     },
                   ),
                   SizedBox(
