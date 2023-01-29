@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/constants/textstyle_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
-import 'package:flutter_app_2022_travel_app/representation/screens/hotel_screen.dart';
 
 class BuildImageHomeScreen extends StatefulWidget {
   const BuildImageHomeScreen({

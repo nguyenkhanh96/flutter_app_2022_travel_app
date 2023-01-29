@@ -5,7 +5,6 @@ import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
 import 'package:flutter_app_2022_travel_app/data/models/room_model.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen_payment.dart';
-import 'package:flutter_app_2022_travel_app/representation/screens/main_app.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/item_room_booking_widget.dart';
