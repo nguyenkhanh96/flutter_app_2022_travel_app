@@ -13,6 +13,8 @@ import 'package:flutter_app_2022_travel_app/representation/screens/select_date_s
 import 'package:flutter_app_2022_travel_app/representation/screens/select_room_screen.dart';
 import 'package:flutter_app_2022_travel_app/representation/screens/splash_screen.dart';
 
+import 'representation/screens/check_out_screen_confirm.dart';
+
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   IntroScreen.routeName: (context) => const IntroScreen(),
@@ -22,6 +24,7 @@ final Map<String, WidgetBuilder> routes = {
   HotelsResultScreen.routeName: (context) => HotelsResultScreen(),
   SelectRoomScreen.routeName: (context) => SelectRoomScreen(),
   PaymentScreen.routeName: (context) => PaymentScreen(),
+  CheckOutConfirm.routeName: (context) => CheckOutConfirm(),
 };
 
 MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {

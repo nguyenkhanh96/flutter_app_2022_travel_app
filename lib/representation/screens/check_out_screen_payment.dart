@@ -3,6 +3,7 @@ import 'package:flutter_app_2022_travel_app/core/constants/color_constants.dart'
 import 'package:flutter_app_2022_travel_app/core/constants/dimension_constants.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/asset.helper.dart';
 import 'package:flutter_app_2022_travel_app/core/helpers/image_helper.dart';
+import 'package:flutter_app_2022_travel_app/representation/screens/check_out_screen_confirm.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/app_bar_container.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/button_widget.dart';
 import 'package:flutter_app_2022_travel_app/representation/widgets/my_radio_list_tile_widget.dart';
@@ -260,7 +261,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
           ButtonWidget(
-            ontap: () {},
+            ontap: () {
+              Navigator.pushNamed(
+                context,
+                CheckOutConfirm.routeName,
+              );
+            },
             title: "Done",
           ),
         ],
