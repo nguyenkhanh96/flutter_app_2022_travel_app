@@ -21,6 +21,7 @@ class PaymentScreen extends StatefulWidget {
 
 class _PaymentScreenState extends State<PaymentScreen> {
   int _value = 1;
+  // ignore: prefer_final_fields, unused_field
   SingingCharacter? _character = SingingCharacter.market;
   Widget _buildItemStepCheckout(
       int step, String stepName, bool isEnd, bool isCheck) {

@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: ColorPalette.primaryColor,
         scaffoldBackgroundColor: ColorPalette.backgroundScaffoldColor,
+        // ignore: deprecated_member_use
         backgroundColor: ColorPalette.backgroundScaffoldColor,
       ),
       routes: routes,

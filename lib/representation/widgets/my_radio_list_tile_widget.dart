@@ -17,7 +17,7 @@ class MyRadioListTile<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => onChanged(value),
-      child: Container(
+      child: SizedBox(
         height: 24,
         child: Row(
           children: [
